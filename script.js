@@ -11,6 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const handleEnvelopeOpen = () => {
             // Open envelope flap
             envelopeWrapper.classList.add('is-open');
+            // Play Quran Audio immediately on click
+            const quranAudio = document.getElementById('quran-audio');
+            if (quranAudio) {
+                quranAudio.play().catch(e => console.log('Audio autoplay blocked:', e));
+            }
             
             // Wait for flap to open (0.8s) then fade out overlay
             setTimeout(() => {
@@ -43,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const translatableElements = document.querySelectorAll('[data-en]');
     const translatableInputs = document.querySelectorAll('[data-placeholder-en]');
 
-    // Retrieve saved language from localStorage, default to English ('en')
-    let currentLang = localStorage.getItem('wedding_lang') || 'en';
+    // Retrieve saved language from localStorage, default to Arabic ('ar')
+    let currentLang = localStorage.getItem('wedding_lang') || 'ar';
     
     function updateLanguage(lang) {
         if (lang === 'ar') {
