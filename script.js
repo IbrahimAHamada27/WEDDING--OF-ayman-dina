@@ -27,6 +27,46 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Remove from DOM after fade out transition
                 setTimeout(() => {
                     envelopeOverlay.style.display = 'none';
+                    // Scroll down slowly to the very bottom after opening
+                    setTimeout(() => {
+                        const startY = window.scrollY;
+                        const maxScroll = Math.max(
+                            document.body.scrollHeight,
+                            document.documentElement.scrollHeight
+                        ) - window.innerHeight;
+                        
+                        const distance = maxScroll - startY;
+                        if (distance <= 0) return;
+                        
+                        // Very slow duration: ~16 milliseconds per pixel (half the previous speed)
+                        const duration = distance * 16; 
+                        let start = null;
+                        
+                        // Allow user to cancel the auto-scroll by interacting
+                        let userInteracted = false;
+                        const stopScroll = () => { userInteracted = true; };
+                        window.addEventListener('wheel', stopScroll, { passive: true, once: true });
+                        window.addEventListener('touchstart', stopScroll, { passive: true, once: true });
+                        window.addEventListener('mousedown', stopScroll, { passive: true, once: true });
+                        
+                        function step(timestamp) {
+                            if (userInteracted) return; // Stop if user took control
+                            
+                            if (!start) start = timestamp;
+                            const progress = timestamp - start;
+                            const percentage = Math.min(progress / duration, 1);
+                            
+                            // Smooth sine easing (slow start, steady middle, slow end)
+                            const ease = -(Math.cos(Math.PI * percentage) - 1) / 2;
+                                
+                            window.scrollTo(0, startY + (distance * ease));
+                            
+                            if (progress < duration) {
+                                window.requestAnimationFrame(step);
+                            }
+                        }
+                        window.requestAnimationFrame(step);
+                    }, 800);
                 }, 1000);
             }, 600);
         };
