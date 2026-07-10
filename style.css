@@ -10,13 +10,13 @@
   
   --font-en: 'Cormorant Garamond', serif;
   --font-script: 'Great Vibes', cursive;
-  --font-ar: 'Alexandria', sans-serif;
-  --font-ar-serif: 'Cormorant Garamond', serif; /* fallback */
+  --font-ar: 'Amiri', serif;
+  --font-ar-serif: 'Amiri', serif; /* fallback */
 }
 
 html[dir="rtl"] {
-  --font-en: 'Alexandria', sans-serif;
-  --font-script: 'Alexandria', sans-serif;
+  --font-en: 'Amiri', serif;
+  --font-script: 'Amiri', serif;
 }
 
 * {
@@ -44,7 +44,8 @@ html[dir="rtl"] h1,
 html[dir="rtl"] h2, 
 html[dir="rtl"] h3 {
   font-family: var(--font-ar);
-  letter-spacing: 1px;
+  letter-spacing: 0px;
+  line-height: 1.6;
 }
 
 .script-title {
@@ -73,15 +74,13 @@ a {
   position: fixed;
   top: 20px;
   left: 20px; /* Always on the left */
-  z-index: 1000;
+  z-index: 10000;
 }
 
 #langToggle {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: var(--burgundy);
   border: 1px solid var(--gold);
-  color: var(--white);
+  color: var(--gold);
   padding: 8px 16px;
   border-radius: 20px;
   font-family: var(--font-en);
@@ -89,6 +88,7 @@ a {
   cursor: pointer;
   transition: all 0.3s ease;
   letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 #langToggle:hover {
@@ -182,26 +182,28 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--text-dark);
+  background-color: var(--gold);
+  color: var(--dark-burgundy);
+  padding: 12px 25px;
+  border-radius: 30px;
   font-size: 1.1rem;
   font-weight: 600;
-  text-decoration: underline;
-  text-decoration-color: var(--gold);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
+  text-decoration: none;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .secondary-map-link:hover {
-  color: var(--burgundy);
-  text-decoration-color: var(--burgundy);
+  background-color: #e6c559;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
 }
 
 .secondary-map-link svg {
-  stroke: var(--gold);
+  stroke: var(--dark-burgundy);
 }
 .secondary-map-link:hover svg {
-  stroke: var(--burgundy);
+  stroke: var(--dark-burgundy);
 }
 
 .text-center {
@@ -515,6 +517,14 @@ html[dir="rtl"] .ayah {
   font-family: var(--font-ar);
   font-style: normal;
   line-height: 2;
+}
+
+.surah-details {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 15px;
+  font-size: 1.1rem;
 }
 
 /* ==========================================================================
