@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 
 <head>
   <meta charset="UTF-8">
@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&display=swap"
     rel="stylesheet">
 
   <!-- AOS CSS -->
@@ -26,7 +26,7 @@
     <div class="overlay-content">
       <div class="overlay-header">
         <p class="overlay-welcome" data-en="WELCOME TO THE WEDDING OF" data-ar="مرحباً بكم في زفاف">WELCOME TO THE WEDDING OF</p>
-        <h1 class="overlay-names" data-en="Dr. Ayman & Dr. Dina" data-ar="د. أيمن و د. دينا">Dr. Ayman & Dr. Dina</h1>
+        <h1 class="overlay-names" data-en="Eng. Ayman & Dr. Dina" data-ar="المهندس أيمن و الدكتورة دينا">المهندس أيمن و الدكتورة دينا</h1>
       </div>
       
       <div class="envelope-wrapper" id="envelopeWrapper">
@@ -69,6 +69,8 @@
 
     <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
       <div class="quran-verse">
+        <!-- Quran Audio -->
+        <audio id="quran-audio" src="القران.mp3" preload="auto" style="display: none;"></audio>
         <p class="bismillah gold-text" data-en="In the name of Allah, the Most Gracious, the Most Merciful"
           data-ar="بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
         <p class="ayah"
@@ -76,10 +78,16 @@
           data-ar="﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ﴾">
           ﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم
           مَّوَدَّةً وَرَحْمَةً ﴾</p>
+          
+        <!-- Surah and Verse -->
+        <div class="surah-details">
+          <span class="surah-name gold-text" data-en="Surah Ar-Rum" data-ar="سورة الروم">سورة الروم</span>
+          <span class="verse-number gold-text" data-en="Verse 21" data-ar="الآية ٢١">الآية ٢١</span>
+        </div>
       </div>
 
       <h3 class="subtitle" data-en="Wedding Invitation" data-ar="دعوة زفاف">Wedding Invitation</h3>
-      <h1 class="names" data-en="Dr. Ayman<br>&<br>Dr. Dina" data-ar="د. أيمن و د. دينا">Dr. Ayman<br>&<br>Dr. Dina</h1>
+      <h1 class="names" data-en="Eng. Ayman<br>&<br>Dr. Dina" data-ar="المهندس أيمن<br>و<br>الدكتورة دينا">المهندس أيمن<br>و<br>الدكتورة دينا</h1>
       <h2 class="hero-date">26 July 2026</h2>
       <p class="invite-text mt-4" data-en="We joyfully invite you to share in our happiness as we unite in marriage."
         data-ar="نتشرف بدعوتكم لمشاركتنا فرحتنا في حفل زفافنا.">We joyfully invite you to share in our happiness as we
@@ -267,8 +275,6 @@
     <div class="container text-center details-container" data-aos="fade-up">
       <h2 class="section-title dark-text" data-en="DETAILS" data-ar="تفاصيل">DETAILS</h2>
       <div class="notes">
-        <p data-en="• Please don't be late! We want to celebrate and capture every beautiful moment with you from the very beginning."
-          data-ar="• عشان نلحق نعيش كل لحظة حلوة ونتصور سوا.. ياريت متتأخروش علينا!">• Please don't be late! We want to celebrate and capture every beautiful moment with you from the very beginning.</p>
         <p data-en="• We are excited to celebrate with you." data-ar="• نحن متحمسون للاحتفال معكم.">• We are excited to
           celebrate with you.</p>
         <p data-en="• Thank you for being part of our special day." data-ar="• شكراً لكونكم جزءاً من يومنا المميز.">•
