@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         let userInteracted = false;
                         const stopScroll = () => { userInteracted = true; };
                         window.addEventListener('wheel', stopScroll, { passive: true, once: true });
-                        window.addEventListener('touchstart', stopScroll, { passive: true, once: true });
+                        window.addEventListener('touchmove', stopScroll, { passive: true, once: true });
                         window.addEventListener('mousedown', stopScroll, { passive: true, once: true });
                         
                         function step(timestamp) {
